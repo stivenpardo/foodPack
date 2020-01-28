@@ -5,7 +5,7 @@ import { Image, Input, Icon, SocialIcon, Tile } from 'react-native-elements';
 export default function Login(props) {
     return (
         <View style={styles.container} >
-            <View style={styles.setection, { marginTop: 30, alignItems:"center" }}>
+            <View style={styles.setection, { marginTop: 30, alignItems: "center" }}>
                 <Tile
                     imageSrc={{ uri: 'https://image.shutterstock.com/image-vector/healthy-food-banner-vegetables-cafe-600w-626693570.jpg' }}
                     title="foodPack"
@@ -16,7 +16,7 @@ export default function Login(props) {
                 // containerStyle={{backgroundColor:'#333333aa', title:'red'}}
 
                 />
-                    <Text style={{marginTop:20, fontSize:20}}> Login </Text>
+                <Text style={{ marginTop: 20, fontSize: 20 }}> Login </Text>
 
             </View>
             <View style={styles.setection, { marginTop: 10, marginBottom: 30 }}>
