@@ -1,28 +1,17 @@
 import React from 'react'
-import { View, Text, StyleSheet, ActivityIndicator } from 'react-native'
-import { Image, Input, Icon, SocialIcon, Tile } from 'react-native-elements';
-
+import { View, Text, StyleSheet } from 'react-native'
+import { Image, Input, Icon, SocialIcon, Divider } from 'react-native-elements';
+import Logo from '../../assets/img/Logo.png'
 export default function Login(props) {
     return (
         <View style={styles.container} >
-            <View style={styles.setection, { marginTop: 30, alignItems: "center" }}>
-                <Tile
-                    imageSrc={{ uri: 'https://image.shutterstock.com/image-vector/healthy-food-banner-vegetables-cafe-600w-626693570.jpg' }}
-                    title="foodPack"
-                    featured
-                    caption="The best Food"
-                    width={280}
-                    height={200}
-                // containerStyle={{backgroundColor:'#333333aa', title:'red'}}
-
-                />
-                <Text style={{ marginTop: 20, fontSize: 20 }}> Login </Text>
-
-            </View>
-            <View style={styles.setection, { marginTop: 10, marginBottom: 30 }}>
+            <Text style={styles.text}> FoodPack </Text>
+            <Image style={styles.img} source={Logo} />
+            <Text style={{ marginTop: 20, fontSize: 20 }}> Login </Text>
+            <View style={{ width: "100%" }}>
                 <Input
                     placeholder='Email'
-                    leftIcon={
+                    rightIcon={
                         <Icon
                             name='envelope'
                             type='font-awesome'
@@ -33,7 +22,7 @@ export default function Login(props) {
                 />
                 <Input
                     placeholder='Password'
-                    leftIcon={
+                    rightIcon={
                         <Icon
                             name='lock'
                             type='font-awesome'
@@ -43,13 +32,22 @@ export default function Login(props) {
                     }
                 />
             </View>
-            <View style={styles.setection, { flexDirection: 'row', justifyContent: "space-around" }}>
+            <View style={[styles.section, { flexDirection: "row" }]}>
+                <Text style={{ fontSize: 15 }}> Don't you have account?</Text>
+                <Text style={styles.textInfo}> Sing up</Text>
+            </View>
+
+            <Divider style={[styles.section, { width: "100%" }]} />
+
+            <View style={[styles.section, { flexDirection: 'row', justifyContent: "space-around" }]}>
                 <SocialIcon
+                    style={styles.socialIcon}
                     title='Facebook'
                     button
                     type='facebook'
                 />
                 <SocialIcon
+                    style={styles.socialIcon}
                     title='Google'
                     button
                     type='google'
@@ -62,19 +60,34 @@ export default function Login(props) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // height:500,
-        // width:290,
-        // alignItems: "center",
+        alignItems: "center",
+        paddingHorizontal: 10,
+        paddingVertical: 30,
         // justifyContent: 'center',
         // backgroundColor: "red",
-        padding: 20,
-
     },
-    setection: {
-        flex: 1,
-        flexDirection: 'column',
-        alignItems: 'flex-start',
+    img: {
+        width: 200,
+        height: 200,
+        borderRadius: 20
     },
+    text: {
+        color: "#555555",
+        fontSize: 40,
+    },
+    textInfo: {
+        color: "blue",
+        fontSize: 15,
+        marginLeft: 5
+    },
+    socialIcon: {
+        height: 40,
+        justifyContent: "center",
+        paddingHorizontal: 30,
+    },
+    section: {
+        marginVertical: 10
+    }
 
 })
 
