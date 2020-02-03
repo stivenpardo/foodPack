@@ -1,14 +1,15 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Image, Input, Icon, SocialIcon, Divider } from 'react-native-elements';
-import Logo from '../../assets/img/Logo.png'
+import Logo from '../../../assets/img/Logo.png'
 export default function Login(props) {
+    console.log(props)
     return (
         <View style={styles.container} >
             <Text style={styles.text}> FoodPack </Text>
             <Image style={styles.img} source={Logo} />
             <Text style={{ marginTop: 20, fontSize: 20 }}> Login </Text>
-            <View style={{ width: "100%" }}>
+            <View style={{ width: "100%", marginTop:10 }}>
                 <Input
                     placeholder='Email'
                     rightIcon={
@@ -34,7 +35,7 @@ export default function Login(props) {
             </View>
             <View style={[styles.section, { flexDirection: "row" }]}>
                 <Text style={{ fontSize: 15 }}> Don't you have account?</Text>
-                <Text style={styles.textInfo}> Sing up</Text>
+                <Text style={styles.textInfo} > Sing up</Text>
             </View>
 
             <Divider style={[styles.section, { width: "100%" }]} />
@@ -56,6 +57,7 @@ export default function Login(props) {
         </View>
     )
 }
+ 
 
 const styles = StyleSheet.create({
     container: {
@@ -63,8 +65,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         paddingHorizontal: 10,
         paddingVertical: 30,
-        // justifyContent: 'center',
-        // backgroundColor: "red",
     },
     img: {
         width: 200,

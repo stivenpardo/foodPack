@@ -2,9 +2,8 @@ import React from 'react'
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Icon } from 'react-native-elements'
-//components
-import MyAccount from '../components/MyAccoun'
-import Login from '../components/Login'
+//Navigations
+import StackMyAccount from './stackAccount'
 // Screens
 import HomeScreen from '../screens/HomeScreen'
 import Restaurant from '../screens/Restaurant'
@@ -25,11 +24,18 @@ const TabNavigator = createBottomTabNavigator({
     }
   },
   Account: {
-    screen: Login,
+    screen: StackMyAccount,
     navigationOptions: {
       tabBarLabel: "Cuenta",
       tabBarIcon: ({ tintColor }) => <Icon name="account-circle" type="MaterialIcons" color={tintColor} size={25} />
     }
+  }
+}, {
+  initialRouteName:'Account',
+  tabBarOptions:{
+    activeTintColor: '#4567ff',
+    inactiveTintColor: '#444'
+    
   }
 });
 
