@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import { Text, View, StyleSheet } from 'react-native'
 import { Input, Icon, SocialIcon, Divider, Button, Overlay, CheckBox } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
-// import { Entypo } from '@expo/vector-icons'
+import { Entypo,Feather } from '@expo/vector-icons'
 export default function Register(props) {
     console.log(props)
     const [acceptTerms, setAcceptTerms] = useState(false)
     const [seeTerms, setSeeTerms] = useState(false)
+    const [hiddenPassword,setHiddenPaswword] = useState(false)
+
 
     return (
         <View style={styles.container}>
@@ -29,9 +31,8 @@ export default function Register(props) {
                 labelStyle={{ fontSize: 18, color: '#4567ff' }}
                 placeholder="email"
                 rightIcon={
-                    <Icon
-                        name="email"
-                        type="entypo"
+                    <Feather
+                        name="eye"
                         size={20}
                     // containerStyle={{marginRight:10}}
                     />
@@ -42,9 +43,8 @@ export default function Register(props) {
                 labelStyle={{ fontSize: 18, color: '#4567ff' }}
                 placeholder="email"
                 rightIcon={
-                    <Icon
-                        name="email"
-                        type="entypo"
+                    <Feather
+                        name={hiddenPassword ? "eye" : "eye-off"}
                         size={20}
                     // containerStyle={{marginRight:10}}
                     />

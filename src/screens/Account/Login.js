@@ -35,7 +35,7 @@ export default function Login(props) {
             </View>
             <View style={[styles.section, { flexDirection: "row" }]}>
                 <Text style={{ fontSize: 15 }}> Don't you have account?</Text>
-                <Text style={styles.textInfo} > Sing up</Text>
+                <Text style={styles.textInfo} onPress={() => props.navigation.navigate('Register')}> Sing up</Text>
             </View>
 
             <Divider style={[styles.section, { width: "100%" }]} />
@@ -57,8 +57,6 @@ export default function Login(props) {
         </View>
     )
 }
- 
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
