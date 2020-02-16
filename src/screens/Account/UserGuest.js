@@ -8,16 +8,22 @@ import { FontAwesome } from '@expo/vector-icons'
 
 function UserGuest(props) {
     return (
-        <View style={styles.container}>
-            <Text style={styles.textTitle}> Lo sentimos debe iniciar sesión </Text>
-            <FontAwesome name="lock" size={50} />
-            <Text style={styles.text}>Por favor iniciar sesion para más contenido</Text>
-            <View style={{ width: "100%" }}  >
-                <Button
+        <View style={styles.container} >
+            <Text style={styles.textTitle} > Lo sentimos debe iniciar sesión </Text>
+            <FontAwesome name="lock"
+                size={50}
+            />
+            <Text style={styles.text} > Por favor iniciar sesion para más contenido </Text>
+            <View style={
+                { width: "100%" }
+            } >
+                <Button 
                     title="Iniciar sesión"
-                    onPress={() => props.navigation.navigate('Login')}
+                    onPress={
+                        () => props.navigation.navigate('Login')
+                    }
                 />
-            </View>
+            </View >
         </View>
     )
 }

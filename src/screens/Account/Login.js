@@ -1,60 +1,70 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, KeyboardAvoidingView } from 'react-native'
 import { Image, Input, Icon, SocialIcon, Divider } from 'react-native-elements';
 import Logo from '../../../assets/img/Logo.png'
+import { ScrollView } from 'react-native-gesture-handler';
 export default function Login(props) {
     console.log(props)
     return (
-        <View style={styles.container} >
-            <Text style={styles.text}> FoodPack </Text>
-            <Image style={styles.img} source={Logo} />
-            <Text style={{ marginTop: 20, fontSize: 20 }}> Login </Text>
-            <View style={{ width: "100%", marginTop:10 }}>
-                <Input
-                    placeholder='Email'
-                    rightIcon={
-                        <Icon
-                            name='envelope'
-                            type='font-awesome'
-                            size={24}
-                            color='black'
+        <KeyboardAvoidingView
+        style={{flex:1}}
+        behavior="padding"
+        enabled
+        keyboardVerticalOffset={150}
+        >
+            <ScrollView>
+                <View style={styles.container} >
+                    <Text style={styles.text}> FoodPack </Text>
+                    <Image style={styles.img} source={Logo} />
+                    <Text style={{ marginTop: 20, fontSize: 20 }}> Login </Text>
+                    <View style={{ width: "100%", marginTop: 10 }}>
+                        <Input
+                            placeholder='Email'
+                            rightIcon={
+                                <Icon
+                                    name='envelope'
+                                    type='font-awesome'
+                                    size={24}
+                                    color='black'
+                                />
+                            }
                         />
-                    }
-                />
-                <Input
-                    placeholder='Password'
-                    rightIcon={
-                        <Icon
-                            name='lock'
-                            type='font-awesome'
-                            size={24}
-                            color='black'
+                        <Input
+                            placeholder='Password'
+                            rightIcon={
+                                <Icon
+                                    name='lock'
+                                    type='font-awesome'
+                                    size={24}
+                                    color='black'
+                                />
+                            }
                         />
-                    }
-                />
-            </View>
-            <View style={[styles.section, { flexDirection: "row" }]}>
-                <Text style={{ fontSize: 15 }}> Don't you have account?</Text>
-                <Text style={styles.textInfo} onPress={() => props.navigation.navigate('Register')}> Sing up</Text>
-            </View>
+                    </View>
+                    <View style={[styles.section, { flexDirection: "row" }]}>
+                        <Text style={{ fontSize: 15 }}> Don't you have account?</Text>
+                        <Text style={styles.textInfo} onPress={() => props.navigation.navigate('Register')}> Sing up</Text>
+                    </View>
 
-            <Divider style={[styles.section, { width: "100%" }]} />
+                    <Divider style={[styles.section, { width: "100%" }]} />
 
-            <View style={[styles.section, { flexDirection: 'row', justifyContent: "space-around" }]}>
-                <SocialIcon
-                    style={styles.socialIcon}
-                    title='Facebook'
-                    button
-                    type='facebook'
-                />
-                <SocialIcon
-                    style={styles.socialIcon}
-                    title='Google'
-                    button
-                    type='google'
-                />
-            </View>
-        </View>
+                    <View style={[styles.section, { flexDirection: 'row', justifyContent: "space-around" }]}>
+                        <SocialIcon
+                            style={styles.socialIcon}
+                            title='Facebook'
+                            button
+                            type='facebook'
+                        />
+                        <SocialIcon
+                            style={styles.socialIcon}
+                            title='Google'
+                            button
+                            type='google'
+                        />
+                    </View>
+                </View>
+            </ScrollView>
+        </KeyboardAvoidingView>
     )
 }
 const styles = StyleSheet.create({
